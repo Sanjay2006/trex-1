@@ -38,8 +38,8 @@ function preload(){
 function setup() {
   createCanvas(600, 200);
 
-  var message = "This is a message";
- console.log(message)
+  //var message = "This is a message";
+ //console.log(message)
   
   trex = createSprite(50,160,20,50);
   trex.addAnimation("running", trex_running);
@@ -70,8 +70,8 @@ function setup() {
   cloudsGroup = createGroup();
 
   
-  trex.setCollider("rectangle",0,0,trex.width,trex.height);
-  trex.debug = true
+  trex.setCollider("circle",0,0,trex);
+  //trex.debug = true
   
   score = 0;
   
@@ -102,7 +102,7 @@ function draw() {
     }
     
     //jump when the space key is pressed
-    if(keyDown("space")&& trex.y >= 100) {
+    if(keyDown("space")&& trex.y >= 160) {
         trex.velocityY = -12;
         jumpSound.play();
     }
